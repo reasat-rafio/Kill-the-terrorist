@@ -1,0 +1,71 @@
+html{
+    box-sizing: border-box;
+    font-size: 10px;
+    background: lightblue;
+}
+
+*, *::after, *::before{
+    box-sizing: inherit;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+h1{
+    text-align: center;
+    font-size: 45px;
+}
+
+button {
+    display: block;
+    margin: auto;
+  
+}
+
+.game {
+    display: flex;
+    height: 600px;
+    width: 800px;
+    margin: 10px auto;
+    flex-wrap: wrap;
+}
+
+.hole {
+    overflow: hidden;
+    flex: 1 0 30%;
+    position: relative;
+}
+
+.hole::after{
+    display: block;
+    background:url("https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn.pixabay.com%2Fphoto%2F2013%2F07%2F12%2F12%2F49%2Fstones-146304_640.png&f=1&nofb=1")bottom center no-repeat;
+    background-size: contain;
+    content: "";
+    width: 100%;
+    height: 80px;
+    position: absolute;
+    z-index: 2;
+    bottom: -30px;
+}
+
+.mole {
+    background: url("https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fpngimg.com%2Fuploads%2Fterrorist%2Fterrorist_PNG31.png&f=1&nofb=1") bottom center no-repeat;
+    background-size: 60%;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 100%;
+    transition: all 0.4s;
+}
+
+.hole.up .mole{
+    top: 0;
+}
+
+body.cross {
+    cursor: crosshair;
+}
+
